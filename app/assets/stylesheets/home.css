@@ -1,0 +1,68 @@
+/* Загальний стиль для сторінки */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F1F0EA;
+  color: #2D232E;
+}
+
+/* Стиль для хедера */
+header {
+  background-color: #2C3E50; /* Глибокий синій для фону */
+  color: #F1F0EA; /* Ніжний кремовий для тексту */
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-size: 54px;
+}
+
+/* Опис для головної сторінки */
+.home-description {
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+  background: #E0DDCF; /* Кремовий фон */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-description h2 {
+  color: #213545; /* Темний синій */
+  margin-bottom: 1rem;
+  font-size: 28px;
+}
+
+.home-description p {
+  color: #534B52; /* Глибокий сірий */
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* Кнопка */
+.btn-success {
+  display: inline-block;
+  background-color: #5F83E6; /* Яскравий синій */
+  color: #F1F0EA; /* Ніжно-бежевий текст */
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success:hover {
+  background-color: #3D617E; /* Темніший синій */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

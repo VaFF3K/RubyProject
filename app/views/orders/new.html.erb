@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="<%= asset_path('order.css') %>">
+<!-- app/views/orders/new.html.erb -->
+<h2>Оформити замовлення</h2>
+
+<%= form_with model: @order, local: true do |form| %>
+  <div>
+    <%= form.label :email, "Email" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+  <%= form.label :phone, "Номер телефону" %>
+  <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, "Прізвище" %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div>
+  <%= form.label :first_name, "Ім'я" %>
+  <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :city, "Місто" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :region, "Область" %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div>
+    <%= form.label :address, "Адреса доставки" %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :delivery_method, "Спосіб доставки" %>
+    <%= form.select :delivery_method, options_for_select([['Кур\'єр', 'Кур\'єр'], ['Відділення Пошти', 'Відділення Пошти']]) %>
+  </div>
+
+  <div>
+    <%= form.label :payment_method, "Спосіб оплати" %>
+    <%= form.select :payment_method, options_for_select([['Оплата при отриманні', 'Оплата при отриманні'], ['Онлайн платіж', 'Онлайн платіж']]) %>
+  </div>
+
+  <div>
+    <%= form.submit 'Оформити замовлення', class: 'btn btn-success' %>
+  </div>
+<% end %>

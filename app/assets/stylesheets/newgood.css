@@ -1,0 +1,111 @@
+/* Стиль для заголовка */
+h1 {
+    background-color: #2C3E50;
+    color: #F1F0EA;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль для форми */
+form {
+    background-color: #F1F0EA;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Стиль для полів вводу */
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-weight: bold;
+    color: #2C3E50;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field textarea,
+.field input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0DDCF;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s ease;
+}
+
+.field input[type="text"]:focus,
+.field input[type="number"]:focus,
+.field textarea:focus {
+    border-color: #3D617E;
+    outline: none;
+}
+
+/* Стиль для кнопки */
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.actions input[type="submit"] {
+    padding: 12px 25px;
+    background-color: #3D617E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actions input[type="submit"]:hover {
+    background-color: #2C3E50;
+    transform: translateY(-2px);
+}
+
+/* Стиль для помилок */
+#error_explanation {
+    background-color: #E74C3C;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+    font-size: 18px;
+}
+
+#error_explanation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#error_explanation ul li {
+    margin: 5px 0;
+}
+
+/* Лінки */
+a {
+    color: #3D617E;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: #2C3E50;
+    text-decoration: underline;
+    transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}

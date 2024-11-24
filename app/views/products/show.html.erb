@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @product.name %>TinyWonders</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" type="text/css" href="<%= asset_path('goodpage.css') %>">
+</head>
+
+<body>
+  <div class="product-details">
+    <!-- Зображення товару -->
+    <div class="product-image">
+      <% if @product.image.attached? %>
+        <%= image_tag @product.image, style: "max-width: 100%; height: auto;" %>
+      <% else %>
+        <%= image_tag 'placeholder.png', style: "max-width: 100%; height: auto;" %>
+      <% end %>
+    </div>
+
+    <!-- Інформація про товар -->
+    <div class="product-info">
+      <h1><%= @product.name %></h1>
+      <h3>Ціна: <%= @product.price %> ₴</h3>
+
+      <% if user_signed_in? %>
+        <%= form_with url: cart_cart_items_path, method: :post, local: true, html: { class: "order-form" } do |form| %>
+          <%= hidden_field_tag :product_id, @product.id %>
+          <%= form.submit "Замовити", class: "btn btn-success" %>
+        <% end %>
+      <% else %>
+        <p class="alert alert-warning">
+          Увійдіть у свій акаунт, щоб додати товар до кошика.
+        </p>
+      <% end %>
+
+      <div class="product-description">
+        <h4>Опис:</h4>
+        <p><%= @product.description %></p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Відгук</h2>
+  <%= form_with model: @feedback, url: feedbacks_path, method: :post, local: true do |form| %>
+    <%= form.hidden_field :product_id, value: @product.id %>  <!-- Потрібно додавати ID продукту -->
+  
+    <div>
+      <%= form.label :rating, "Оцінка (1-5)" %>
+      <%= form.number_field :rating, min: 1, max: 5, required: true %>
+    </div>
+  
+    <div>
+      <%= form.label :comment, "Залиште Ваш Відгук" %>
+      <%= form.text_area :comment, rows: 5, maxlength: 500, required: true %>
+    </div>
+  
+    <div>
+      <%= form.submit "Опублікувати Відгук", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <h2>Відгуки Користувачів</h2>
+  <% @feedbacks.each do |feedback| %>
+    <div class="feedback">
+      <h4>Ім'я: <%= feedback.user.first_name %> <%= feedback.user.last_name %></h4>
+      <p><strong>Оцінка:</strong> <%= feedback.rating %>/5</p>
+      <p><strong>Коментар:</strong>  <%= feedback.comment %></p>
+      <p><small>Дата публікації -- <%= feedback.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+    </div>
+  <% end %>
+  
+</body>
+</html>

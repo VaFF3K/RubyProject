@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="<%= asset_path('myorderlist.css') %>">
+<div>
+  <h2>Ваші замовлення</h2>
+
+  <% if @orders.any? %>
+    <div class="orders-container">
+      <% @orders.each do |order| %>
+        <div class="order">
+          <h3>Замовлення №<%= order.id %></h3>
+          <p><strong>Товари:</strong> <%= order.product_list %></p>
+          <p><strong>Вид оплати:</strong> <%= order.payment_method.humanize %></p>
+          <p><strong>За адресою:</strong> <%= order.address %>, <%= order.city %>, <%= order.region %></p>
+          <p><strong>Доставка:</strong> <%= order.delivery_method.humanize %></p>
+          <p><strong>Дата і час:</strong> <%= order.created_at.strftime('%d.%m.%Y о %H:%M') %></p>
+          <p><strong>Загальна сума:</strong> <%= order.product_price %> ₴</p>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="no-orders">У вас немає оформлених замовлень.</p>
+  <% end %>
+</div>

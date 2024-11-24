@@ -1,0 +1,10 @@
+<h1>Customer Feedback</h1>
+
+<% @feedbacks.each do |feedback| %>
+  <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+    <h4><%= feedback.user.first_name %> <%= feedback.user.last_name %></h4>
+    <p>Rating: <%= feedback.rating %>/5</p>
+    <p><%= feedback.comment %></p>
+    <p><small>Posted on <%= feedback.created_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+  </div>
+<% end %>

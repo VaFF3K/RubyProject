@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F1F0EA;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  background-color: #2C3E50;
+  color: #F1F0EA;
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.orders-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Колонки з мінімальною шириною 300px */
+  gap: 20px; /* Відступи між колонками */
+  padding: 20px;
+}
+
+.order {
+  background-color: #F1F0EA;
+  border: 1px solid #E0DDCF;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.order h3 {
+  font-size: 22px;
+  color: #3D617E;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.order p {
+  font-size: 16px;
+  color: #474448;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.order p strong {
+  color: #2C3E50;
+}
+
+.no-orders {
+  text-align: center;
+  font-size: 18px;
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 10px;
+}

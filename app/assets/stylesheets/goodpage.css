@@ -1,0 +1,182 @@
+/* Загальний стиль для сторінки продукту */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F1F0EA;
+  margin: 0;
+  padding: 0;
+}
+
+.product-details {
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.product-image {
+  flex: 1;
+  text-align: center;
+}
+
+.product-info {
+  flex: 2;
+  padding-left: 20px;
+  margin-left: 25px;
+  margin-top: 30px;
+  background-color: #F1F0EA;
+  padding: 20px;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h1 {
+  font-size: 28px;
+  color: #2C3E50;
+}
+
+.product-info h3 {
+  font-size: 22px;
+  color: #3D617E;
+}
+
+.product-description h4 {
+  font-size: 20px;
+  color: #2C3E50;
+}
+
+.product-description p {
+  font-size: 16px;
+  color: #474448;
+  line-height: 1.5;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.order-form {
+  width: 20%; 
+  margin-left: -10px;  
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.order-form input[type="submit"] {
+  padding: 12px;
+  font-size: 18px;
+}
+
+.btn-success {
+  background-color: #3D617E;
+  color: white;
+  width: 95%;
+}
+
+.btn-success:hover {
+  background-color: #2C3E50;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #534B52;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2D232E;
+  transform: translateY(-2px);
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+/* Стиль для форми відгуку */
+form {
+  margin-left: 25px;
+  margin-top: 30px;
+  background-color: #F1F0EA;
+  padding: 20px;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+  color: #2C3E50;
+}
+form input[type="number"] {
+  width: 6%;
+}
+form input[type="number"],
+form textarea {
+  padding: 10px;
+  border: 1px solid #E0DDCF;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form textarea {
+  margin-top: 15px;
+  height: 100px;
+  width: 90%;
+}
+
+
+form input[type="number"]:focus,
+form textarea:focus {
+  border-color: #3D617E;
+  outline: none;
+}
+
+/* Стиль для відгуків */
+h2 {
+  font-size: 24px;
+  color: #2C3E50;
+  margin-top: 40px;
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+div.feedback {
+  background-color: #fff;
+  border: 1px solid #E0DDCF;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+div.feedback h4 {
+  font-size: 18px;
+  color: #2C3E50;
+}
+
+div.feedback p {
+  font-size: 16px;
+  color: #474448;
+}
+
+div.feedback small {
+  color: #A5A5A5;
+}

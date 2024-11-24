@@ -1,0 +1,131 @@
+/* Загальний стиль таблиці */
+table {
+    width: 1200px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    font-family: 'Arial', sans-serif; /* Задаємо шрифт для таблиці */
+    
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E0DDCF;
+    
+}
+
+th {
+    background-color: #2D232E;
+    color: #E0DDCF;
+    font-family: 'Roboto', sans-serif;
+}
+
+td {
+    background-color: #F1F0EA;
+    font-family: 'Verdana', sans-serif;
+}
+
+tr:nth-child(even) td {
+    background-color: #E0DDCF;
+}
+
+/* Стиль кнопок */
+.btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+.btn-primary {
+    background-color: #3D617E;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #213545;
+}
+
+.btn-danger {
+    background-color: #2D232E;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.btn-danger:hover {
+    background-color: #443439;
+    text-decoration: underline;
+}
+
+.btn-continue {
+    background-color: #2D232E;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+}
+.btn-continue:hover { 
+    background-color: #443439;
+    text-decoration: underline;
+}
+
+.btn-success {
+    background-color: #3D617E;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    margin-right: 30px;
+}
+
+.btn-success:hover {
+    background-color: #2C3E50;
+    color: white;
+    
+}
+
+/* Стиль для кількості товарів (input) */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #E0DDCF;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #3D617E;
+    outline: none;
+}
+
+h1 {
+    background-color: #2C3E50; 
+    color: #F1F0EA; 
+    text-align: center;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль для сумарної вартості */
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2C3E50;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+/* Лінки */
+a {
+    padding: 50px;
+    color: #3D617E;
+    text-decoration: none;
+    font-weight: bold;
+}

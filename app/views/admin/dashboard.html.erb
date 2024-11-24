@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="<%= asset_path('adminboard.css') %>">
+<h1>Адмін-Панель</h1>
+
+<%= link_to 'Додати Продукт', new_product_path, class: 'btn btn-success' %>
+
+<h2>Список продуктів</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Назва</th>
+      <th>Категорія</th>
+      <th>Опис</th>
+      <th>Ціна (₴)</th>
+      <th>Зображення</th>
+      <th>Дії</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Product.all.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.category %></td>
+        <td><%= truncate(product.description, length: 50) %></td>
+        <td><%= product.price %></td>
+        <td><%= image_tag product.image, size: "100x100" if product.image.present? %></td>
+        <td>
+        
+        <%= link_to 'Редагувати', "/products/#{product.id}/edit", class: 'btn btn-primary' %>
+<%= form_with model: product, url: product_path(product), method: :delete, data: { confirm: 'Ви впевнені, що хочете видалити цей продукт?' }, class: 'd-inline' do |form| %>
+  <%= form.submit 'Видалити', class: 'btn btn-danger' %>
+<% end %>
+        
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

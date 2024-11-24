@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="<%= asset_path('authforms.css') %>">
+<h2>Реєстрація</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Пароль" %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> символів мінімум)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Підтвердження паролю" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  
+  <div class="field">
+    <%= f.label :first_name, "Ім'я" %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, "Прізвище" %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Зареєструватись" %>
+  </div>
+<%= render "devise/shared/links" %>
+<% end %>
+

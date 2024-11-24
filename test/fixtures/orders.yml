@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  product_list: MyText
+  product_price: 9.99
+  address: MyText
+
+two:
+  user: two
+  product_list: MyText
+  product_price: 9.99
+  address: MyText

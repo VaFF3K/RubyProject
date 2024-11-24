@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "TinyWonders" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="<%= asset_path('layout.css') %>">
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <!-- Навігаційна панель -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h1><a href="/">TinyWonders</a></h1>
+      </div>
+      <div class="navbar-links">
+        <%= link_to 'Каталог', products_path, class: ('active' if current_page?(products_path)) %>
+        <% if user_signed_in? %>
+          <%= link_to 'Кошик', cart_path, class: ('active' if current_page?(cart_path)) %>
+        <% end %>
+      </div>
+      <div class="navbar-user"> 
+        <% if user_signed_in? %>
+          <p>Ласкаво просимо, <%= current_user.first_name %> <%= current_user.last_name %>!</p>
+          <%= link_to 'Вийти', destroy_user_session_path, method: :delete, class: 'btn btn-secondary' %>
+          <%= link_to 'Мої Замовлення', user_orders_path, class: 'btn btn-info' %>
+        <% else %>
+          <%= link_to 'Увійти', new_user_session_path, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </nav>
+
+    <!-- Повідомлення -->
+    <% if notice %>
+      <div class="alert alert-info"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+
+    <!-- Основний контент -->
+    <main>
+      <%= yield %>
+    </main>
+
+    <!-- Футер з контактними даними -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p><strong>Контактні дані:</strong></p>
+        <p>Адреса: вул. Прикладна 12, Київ, Україна</p>
+        <p>Телефон: +38 (044) 123-45-67</p>
+        <p>Email: support@tinywonders.com</p>
+        <p>© 2024 TinyWonders. Всі права захищені.</p>
+      </div>
+    </footer>
+  </body>
+</html>
