@@ -25,12 +25,13 @@ body {
   font-weight: bold;
   padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar a:hover {
   color: #5F83E6; /* Яскравий синій */
   background-color: rgba(95, 131, 230, 0.2);
+  transform: scale(1.035);
 }
 
 .navbar a.active {
@@ -41,6 +42,13 @@ body {
 .navbar-brand h1 a {
   font-size: 26px;
   letter-spacing: 1px;
+}
+
+.navbar-brand h1 {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.navbar-brand h1:hover {
+  transform: scale(1.03);
 }
 
 .navbar-user p {

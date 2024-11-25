@@ -22,6 +22,7 @@ header h1 {
   font-size: 2.5rem;
   letter-spacing: 1px;
   font-size: 54px;
+  
 }
 
 /* Опис для головної сторінки */
@@ -65,4 +66,17 @@ header h1 {
   background-color: #3D617E; /* Темніший синій */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.styled-image {
+  border-radius: 15px; /* Згладжені кути */
+  width: 400px; /* Збільшує ширину */
+  height: auto; /* Зберігає пропорції */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Додає тінь для обрамлення */
+  margin: 20px auto; /* Центрує зображення (опційно) */
+  display: block; /* Додає блоковий рівень для вирівнювання */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.styled-image:hover {
+  transform: scale(1.035);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
