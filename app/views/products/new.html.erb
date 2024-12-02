@@ -43,6 +43,7 @@
     <%= form.submit "Створити" %> 
   </div>
   
-<%= link_to 'Повернутись до списку керування товарами', products_path %>
+  <%= link_to 'Повернутись до списку керування товарами', request.referer || admin_path %>
+
 <% end %>
 
